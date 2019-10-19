@@ -17,7 +17,9 @@ class Giant {
 let fred = Giant()
 ```
 
-Will these three lines of code run? If not, why not?
+Q: Will these three lines of code run? If not, why not?
+
+A: No, because homePlanet is a let Constant.
 
 ```swift
 fred.name = "Brick"
@@ -27,6 +29,13 @@ fred.homePlanet = "Mars"
 
 Fix the class definition for `Giant` in the space below so that it **does** work:
 
+```
+class Giant {
+ var name: String = "Fred"
+ var weight: Double = 340.0
+ var homePlanet: String = "Earth"
+}
+```
 
 ## Question 2
 
@@ -41,7 +50,9 @@ struct Alien {
 let bilbo = Alien(name: "Bilbo", height: 1.67, homePlanet: "Venus")
 ```
 
-Will these three lines of code run? If so, why not?
+Q: Will these three lines of code run? If so, why not?
+
+A: No, because bilbo is a let constant
 
 ```swift
 bilbo.name = "Jake"
@@ -49,35 +60,53 @@ bilbo.height = 1.42
 bilbo.homePlanet = "Saturn"
 ```
 
+
 Change the declaration of `bilbo` so that the above three lines of code **do** work:
 
+```
+var bilbo = Alien(name: "Bilbo", height: 1.67, homePlanet: "Venus")
+```
 
 ## Question 3
 
 Consider this bit of code that uses the `Giant` class:
 
 ```swift
+class Giant {
+ var name: String = "Fred"
+ var weight: Double = 340.0
+ var homePlanet: String = "Earth"
+}
+
+
 let edgar = Giant()
 edgar.name = "edgar"
 let jason = edgar
 jason.name = "Jason"
 ```
 
-What will the value of `edgar.name` be after those three lines of code are run? What will the value of `jason.name` be? Why?
+Q: What will the value of `edgar.name` be after those three lines of code are run? What will the value of `jason.name` be? Why?
 
+A: They'd both be Jason because "let jason = edgar" and the final "jason.name" = "Jason"
 
 ## Question 4
 
 Given this bit of code that uses the `Alien` struct:
 
 ```swift
+struct Alien {
+ var name: String
+ var height: Double
+ var homePlanet: String
+}
+
 var charles = Alien(name: "Charles", height: 2.25, homePlanet: "Pluto")
 var charlesFromJupiter = charles
 charlesFromJupiter.homePlanet = "Jupiter"
 ```
 
-What will the value of `charles.homePlanet` be after the above code run? What about the value of `charlesFromJupiter.homePlanet`? Why?
-
+Q: What will the value of `charles.homePlanet` be after the above code run? What about the value of `charlesFromJupiter.homePlanet`? Why?
+A:
 
 ## Question 5
 
