@@ -106,7 +106,7 @@ charlesFromJupiter.homePlanet = "Jupiter"
 ```
 
 Q: What will the value of `charles.homePlanet` be after the above code run? What about the value of `charlesFromJupiter.homePlanet`? Why?
-A:
+A: The value of charles.homePlanet is Pluto. The Value of charlesFromJupiter.homePlanet is Jupiter.
 
 ## Question 5
 
@@ -127,11 +127,12 @@ struct BankAccount {
 }
 ```
 
-Does this code work? Why or why not?
+Q: Does this code work? Why or why not? 
+A: This code doesn't work because the left side of mutating operator isn't mutable.
 
-Fix the `BankAccount` struct so it does work.
+***Fix the `BankAccount` struct so it does work.
 
-Given the code below (which should incorporate any fixes you made):
+***Given the code below (which should incorporate any fixes you made):
 
 ```swift
 var joeAccount = BankAccount(owner: "Joe", balance: 100.0)
@@ -139,7 +140,7 @@ var joeOtherAccount = joeAccount
 joeAccount.withdraw(50.0)
 ```
 
-What will the value of `joeAccount.balance` be after the above code runs? What about the value of `joeOtherAccount.balance`? Why?
+***What will the value of `joeAccount.balance` be after the above code runs? What about the value of `joeOtherAccount.balance`? Why?
 
 
 ## Question 6
@@ -154,9 +155,34 @@ b. Write a method in `Person` called `fullName` that will return a formatted str
 
 a. Create a struct called `Book` that has properties `title`, `author` and `rating`, of type `String`, `String`, and `Double` respectively. Create some instances of `Book`.
 
+```
+struct Book {
+var title: String
+var author: String
+var rating: Double
+}
 
+var someBook = Book()
+someBook.rating = 4.9
+
+```
 b. Add a method to `Book` called `isGood` that returns `true` if its rating is greater than or equal to 7
 
+```
+struct Book {
+var title: String
+var author: String
+var rating: Double
+
+func isGood(rating: Double) -> Bool {
+let greaterOrEqual = 0.0
+if self.rating >= 7 {
+print("\(title) has a good rating.")
+} else {
+print("\(title) has a bad rating.")
+}
+}
+```
 
 ## Question 8
 
